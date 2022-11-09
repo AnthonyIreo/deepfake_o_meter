@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="keywords" content="UBDFML DeepFakeOmeter, State University of New York at Buffalo">
+  <meta name="description" content="UBDFML DeepFakeOmeter">
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link href="{{ url_for('static', filename='css/animate.min.css') }}" rel='stylesheet' type='text/css'>
+  <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel='stylesheet' type='text/css'>
+  <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel='stylesheet' type='text/css'>
+  <link href="{{ url_for('static', filename='css/templatemo-style.css') }}" rel='stylesheet' type='text/css'>
+  <link href="{{ url_for('static', filename='css/resultpage.css') }}" rel='stylesheet' type='text/css'>
+
+  <!-- <link rel="stylesheet" href="{{url_for('static', filename='css/jemdoc.css')}}" type="text/css" />
+  <link rel="stylesheet" href="{{url_for('static', filename='css/mycss.css')}}" type="text/css" /> -->
+
+  <title>DeepFake-o-meter</title>
+</head>
+
+
+<body data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
+
+<nav class="navbar navbar-fixed-top custom-navbar" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon icon-bar"></span>
+        <span class="icon icon-bar"></span>
+        <span class="icon icon-bar"></span>
+      </button>
+      <a href="#" class="navbar-brand">DeepFake-o-meter</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://zinc.cse.buffalo.edu/ubmdfl/deep-o-meter/" class="smoothScroll">Home</a></li>
+        <li><a href="https://ubmdfl.cse.buffalo.edu/" class="smoothScroll" target="_blank">About</a></li>
+        <li><a href="https://zinc.cse.buffalo.edu/ubmdfl/deep-o-meter/" class="smoothScroll">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<h3>{{sentence1}}</h3>
+<h3>{{sentence2}}</h3>
+<br><br><br><br><br><br>
+</body>
+
+
+<footer>
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12">
+              <ul class="social-icon wow fadeIn" data-wow-delay="0.3s">
+                  <!--					<li><a href="#" class="fa fa-facebook"></a></li>-->
+                  <!--					<li><a href="#" class="fa fa-twitter"></a></li>-->
+                  <!--					<li><a href="#" class="fa fa-instagram"></a></li>-->
+              </ul>
+              <p class="wow bounceIn">
+                  <small>DeepFake-o-meter is initially developed by <a href="https://yuezunli.github.io/">Yuezun Li</a>, Cong Zhang, Pu Sun, Lipeng Ke, Yan Ju, and <a href="https://cse.buffalo.edu/~siweilyu/">Siwei Lyu</a> of <a href="https://ubmdfl.github.io/">
+                      UB Media Forensic Lab</a>, and currently developed by Wenhui Huang, Jiaqian Liu, Baosheng Zheng, Haonan Sun and Jiajun Gao. If you are interested in the design and implementation of DeepFake-o-meter, please check out our paper [<a href="https://cse.buffalo.edu/~siweilyu/lyu_publications.html#SADFE21">Link</a>]. The DeepFake-o-meter platform is grateful for the tremendous technical support of the CSE-consult group of the CSE Department at UB. Last but not least, the DeepFake-o-meter team would like to thank all the authors,
+                      contributors, and developers of the individual detection algorithms.</small>
+                  
+                  <br><br>
+                  <small>This project is partially supported by the National Science Foundation Research Projects under Grant No. 2103450 and SaTC-2153112. The views, opinions and/or findings expressed are those of the author and should not be interpreted as representing the official views or policies of the National Science Foundation, or the U.S. Government.
+                      <br>(see the full list <a href="./reference" >Reference</a>)</small>
+              <hr>&copy; UB Media Forensic Lab (<a href="https://ubmdfl.github.io/">UB MDFL</a>) 2022
+              </p>
+          </div>
+      </div>
+  </div>
+</footer>

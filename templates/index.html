@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <title>DeepFake-o-meter</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href="{{ url_for('static', filename='css/animate.min.css') }}" rel='stylesheet' type='text/css'>
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel='stylesheet' type='text/css'>
+    <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel='stylesheet' type='text/css'>
+    <link href="{{ url_for('static', filename='css/templatemo-style.css') }}" rel='stylesheet' type='text/css'>
+    <link href="{{ url_for('static', filename='css/old_css.css') }}" rel='stylesheet' type='text/css'>
+    <!--	new css file-->
+<!--    <link rel="stylesheet" href="css/old_css.css">-->
+</head>
+
+
+<body data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
+<div class="preloader">
+    <div class="sk-spinner sk-spinner-rotating-plane"></div>
+</div>
+
+
+
+<!--navigation start-->
+<nav class="navbar navbar-fixed-top custom-navbar" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon icon-bar"></span>
+                <span class="icon icon-bar"></span>
+                <span class="icon icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand">DeepFake-o-meter</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="https://zinc.cse.buffalo.edu/ubmdfl/deep-o-meter/" class="smoothScroll">Home</a></li>
+                <li><a href="https://ubmdfl.cse.buffalo.edu/" class="smoothScroll" target="_blank">About</a></li>
+                <li><a href="https://zinc.cse.buffalo.edu/ubmdfl/deep-o-meter/" class="smoothScroll">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--navigation end-->
+
+
+<!-- start home -->
+<section id="home">
+    <div class="overlay">
+        <div class="flexslider">
+                <ul class="slides">
+                    <!--				<li>-->
+                    <!--					<img src="images/slider/1.jpg" alt="Slide 1">-->
+                    <!--					<div class="slider-caption">-->
+                    <!--						<div class="templatemo_homewrapper">-->
+                    <!--							<h3 class="wow bounceIn">web design and development</h3>-->
+                    <!--							<h1 class="wow bounce">Digital Studio</h1>-->
+                    <!--							<h2>-->
+                    <!--								<span class="wow fadeIn" data-wow-delay="0.3s">WEB,</span>-->
+                    <!--								<span class="wow fadeIn" data-wow-delay="0.6s">MOBILE,</span>-->
+                    <!--								<span class="wow fadeIn" data-wow-delay="0.9s">UX DESIGN</span>-->
+                    <!--							</h2>-->
+                    <!--							<a href="#portfolio" class="smoothScroll templatemo-slider-btn btn btn-default">Learn More</a>-->
+                    <!--						</div>-->
+                    <!--					</div>-->
+                    <!--				</li>-->
+                    <li>
+                        <img src="{{ url_for('static', filename='images/wallpaper.jpg') }}" alt="Slide 2">
+                        <!-- <img src="../static/images/slider/2.jpg" alt="Slide 2"> -->
+                        <div class="slider-caption">
+                            <div class="templatemo_homewrapper">
+                                <h1>DeepFake-o-meter</h1>
+                                <h3>An open platform integrating state-of-the-art DeepFake detection methods</h3>
+                                <!--							<a href="#service" class="smoothScroll templatemo-slider-btn btn btn-default">Start DeepFake</a>-->
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+        </div>
+    </div>
+</section>
+<!-- end home -->
+
+
+<!-- start service -->
+<section id="service">
+    <form action="./submit" method="post" enctype='multipart/form-data' >
+        <!--	updated before-->
+        <div class="container" id="width_for_service">
+            <div class="change_background" id="change_background"></div>
+                <div class="row">
+                    <div class="col-md-12 text-center wow bounceIn">
+                        <h2>Check Your File</h2>
+                        <hr>
+                        <h4>You can upload a video from your computer. Note that should upload only one video each time.</h4>
+                        <br>
+                    </div>
+
+                    <!--			upload video, laptop start-->
+                    <div class="col-md-6">
+                        <div class="media">
+                            <div class="media-object media-left wow fadeIn" data-wow-delay="0.6s">
+                                <i class="fa fa-folder-open"></i>
+                            </div>
+                            <div class="media-body">
+                                <h3 class="media-heading">Upload Video</h3>
+                                <p>Please upload a .wav video (maximum size is 50MB and make sure there is no non alphanumeric characters in video name).<br></p>
+                                <dl class="upfile" style="text-align:justify">
+                                    <input  type="file" name="file">
+                                </dl>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <!--			upload video, laptop end-->
+
+                    <!--			select method, android start-->
+                    <div class="col-md-6">
+                        <div class="media">
+                            <div class="media-object media-left wow fadeIn" data-wow-delay="0.6s">
+                                <i class="fa fa-wrench"></i>
+                            </div>
+                            <!--					body start-->
+                            <div class="media-body">
+                                <h3 class="media-heading">Select DeepFake Detection Methods</h3>
+                                <p>Select the deepfake Methods. </p>
+                                <p>Instruction <a href="./reference" >Reference.</a></p>
+                                <!-- the div would display the method we use -->
+                                <div><input type="checkbox" name="method" value="BIC" />  Audio-based methods: BIC(.WAV)</div>
+                                <br>
+                            </div>
+                            <!--					body end-->
+                        </div>
+                    </div>
+                    <!--			select method, android end-->
+
+                    <!--			send email, paper plane start-->
+                    <div class="col-md-6">
+                        <div class="media">
+                            <div class="media-object media-left wow fadeIn" data-wow-delay="0.6s">
+                                <i class="fa fa-envelope"></i>
+                            </div>
+                            <div class="media-body">
+                                <h3 class="media-heading">Input your e-mail</h3>
+                                <p> The e-mail address will be used as file name in the system.</p>
+                                <p><nobr>E-mail address: <textarea type="text" class="query" name="input_email" id="input_email" value="" style="width:200px;height:18px" onkeydown="if (event.keyCode == 13) { this.form.submit(); return false; }"></textarea></nobr></p>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <!--			send email, paper plane end-->
+
+                    <!--			agreement, html5 start-->
+                    <div class="col-md-6">
+                        <div class="media">
+                            <div class="media-object media-left wow fadeIn" data-wow-delay="0.6s">
+                                <i class="fa fa-check-square"></i>
+                            </div>
+                            <div class="media-body">
+                                <h3 class="media-heading">Agreement</h3>
+
+                                <p style="text-align:justify"><input type="checkBox" onclick="if (this.checked) {enable()} else {disable()}">  By clicking this box, I accept the <a href="./terms">terms</a> of using DeepFake-o-meter.</p>
+
+                                <p>Please click the 'Submit' and wait.</p>
+                                <p style="text-align:justify"><input type="submit" name="submit_button" id="accept" style="width:100px;background:#fff;padding: 8px 20px 5px 10px;height:35px;color:#000;margin-top:0px;margin-left:0px"  value="Submit"/></p>
+
+                                <!-- preloader after submit -->
+                                <div id="submit_preloader"></div>
+                                
+                                <!-- onclick does not work: after clicking page does not run -->
+                                <!-- <p style="text-align:justify"><input type="submit" name="submit_button" id="accept" style="width:100px;background:#fff;padding: 8px 20px 5px 10px;height:35px;color:#000;margin-top:0px;margin-left:0px" onclick="submit_and_pending();this.disabled=true" value="Submit"/></p> -->
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--			agreement, html5 end-->
+                </div>
+            </div>
+        </div>
+    </form>
+</section>
+<!-- end service -->
+
+
+<!-- start contact -->
+<section id="contact">
+    <div class="divider">
+        <div class="overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="divider-des">
+                        <h2 class="wow bounceIn">Contact</h2>
+                        <hr>
+                        <h4>Talk to us for more assistance...</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--messages input-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form action="./message" method="post" enctype='multipart/form-data'>
+                    <div class="col-md-4 col-sm-4 wow fadeIn" data-wow-delay="0.3s">
+                        <input type="text" placeholder="Name" class="form-control" name="message_name" id="message_name">
+                    </div>
+                    <div class="col-md-4 col-sm-4 wow fadeIn" data-wow-delay="0.3s">
+                        <input type="email" placeholder="Email" class="form-control" name="message_email" id="message_email">
+                    </div>
+                    <div class="col-md-4 col-sm-4 wow fadeIn" data-wow-delay="0.3s">
+                        <input type="text" placeholder="Subject" class="form-control" name="message_subject" id="message_subject">
+                    </div>
+                    <div class="col-md-12 col-sm-12 wow fadeIn" data-wow-delay="0.9s">
+                        <textarea class="form-control" rows="5" placeholder="Message" name="message_message" id="message_message"></textarea>
+                    </div>
+                    <div class="col-md-offset-3 col-sm-offset-3 col-sm-6 col-md-6 wow fadeIn" data-wow-delay="0.3s">
+                        <input type="submit" value="Send Message" class="form-control" onclick="message_form_submit()">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end contact -->
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="social-icon wow fadeIn" data-wow-delay="0.3s">
+                    <!--					<li><a href="#" class="fa fa-facebook"></a></li>-->
+                    <!--					<li><a href="#" class="fa fa-twitter"></a></li>-->
+                    <!--					<li><a href="#" class="fa fa-instagram"></a></li>-->
+                </ul>
+                <p class="wow bounceIn">
+                    <small>DeepFake-o-meter is initially developed by <a href="https://yuezunli.github.io/">Yuezun Li</a>, Cong Zhang, Pu Sun, Lipeng Ke, Yan Ju, and <a href="https://cse.buffalo.edu/~siweilyu/">Siwei Lyu</a> of <a href="https://ubmdfl.github.io/">
+                        UB Media Forensic Lab</a>, and currently developed by Wenhui Huang, Jiaqian Liu, Baosheng Zheng, Haonan Sun and Jiajun Gao. If you are interested in the design and implementation of DeepFake-o-meter, please check out our paper [<a href="https://cse.buffalo.edu/~siweilyu/lyu_publications.html#SADFE21">Link</a>]. The DeepFake-o-meter platform is grateful for the tremendous technical support of the CSE-consult group of the CSE Department at UB. Last but not least, the DeepFake-o-meter team would like to thank all the authors,
+                        contributors, and developers of the individual detection algorithms.</small>
+                    
+                    <br><br>
+                    <small>This project is partially supported by the National Science Foundation Research Projects under Grant No. 2103450 and SaTC-2153112. The views, opinions and/or findings expressed are those of the author and should not be interpreted as representing the official views or policies of the National Science Foundation, or the U.S. Government.
+                        <br>(see the full list <a href="./reference" >Reference</a>)</small>
+                <hr>&copy; UB Media Forensic Lab (<a href="https://ubmdfl.github.io/">UB MDFL</a>) 2022
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!--new scripts-->
+<!-- <script>
+    function loading(){
+
+    }
+</script> -->
+<script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+<script src="{{ url_for('static', filename='js/message_form.js')}}"></script>
+<script src="{{ url_for('static', filename='js/old_page.js')}}"></script>
+<script type="text/babel" src="{{ url_for('static', filename='js/preloader.js')}}"></script>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<!--old scripts-->
+<script src="{{ url_for('static', filename='js/jquery.js')}}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+<script src="{{ url_for('static', filename='js/jquery.flexslider.js')}}"></script>
+<script src="{{ url_for('static', filename='js/isotope.js')}}"></script>
+<script src="{{ url_for('static', filename='js/imagesloaded.min.js')}}"></script>
+<script src="{{ url_for('static', filename='js/smoothscroll.js')}}"></script>
+<script src="{{ url_for('static', filename='js/wow.min.js')}}"></script>
+<script src="{{ url_for('static', filename='js/custom.js')}}"></script>
+
+</body>
+</html>
